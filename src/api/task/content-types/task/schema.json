@@ -28,6 +28,12 @@
     },
     "description": {
       "type": "text"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::task.task",
+      "inversedBy": "tasks"
     }
   }
 }
