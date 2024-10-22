@@ -23,16 +23,16 @@
       "enum": [
         "new",
         "active",
-        "close"
+        "closed"
       ]
     },
     "description": {
       "type": "text"
     },
-    "users": {
+    "user": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::task.task",
+      "target": "plugin::users-permissions.user",
       "inversedBy": "tasks"
     }
   }

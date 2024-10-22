@@ -14,9 +14,12 @@ export interface ApiTaskTask extends Struct.CollectionTypeSchema {
   attributes: {
     title: Schema.Attribute.String;
     date: Schema.Attribute.Date;
-    state: Schema.Attribute.Enumeration<['new', 'active', 'close']>;
+    state: Schema.Attribute.Enumeration<['new', 'active', 'closed']>;
     description: Schema.Attribute.Text;
-    tasks: Schema.Attribute.Relation<'oneToMany', 'api::task.task'>;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
